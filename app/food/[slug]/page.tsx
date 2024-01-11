@@ -7,12 +7,11 @@ export const revalidate = 30; // revalidate at most 30 seconds
 
 async function getData(slug: string) {
   const query = `
-    *[_type == "foodblog" && slug.current == '${slug}'] {
-        "currentSlug": slug.current,
-          title,
-          content,
-          titleImage
-      }[0]`;
+  *[_type == 'foodBlog'] | order(_createdAt desc){
+    title,
+      smallDescription,
+      "currentSlug": slug.current
+  }[0]`;
 
   const data = await client.fetch(query);
   return data;
@@ -26,10 +25,11 @@ export default async function BlogArticle({
   const data: fullBlog = await getData(params.slug);
 
   return (
+    
     <div className="mt-8">
       <h1>
         <span className="block text-base text-center text-primary font-semibold tracking-wide uppercase">
-          Abbas Ali - Food Blog
+          Abbas Ali - Blog
         </span>
         <span className="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl">
           {data.title}

@@ -4,6 +4,7 @@ import './globals.css'
 import { ThemeProvider } from './components/theme-provider'
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import Menu from './components/menu';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -28,6 +29,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
           <Navbar/>
+          <Menu/>
           <main className="max-w-2xl mx-auto px-4 ">{children}</main>
 
           <Footer/>
