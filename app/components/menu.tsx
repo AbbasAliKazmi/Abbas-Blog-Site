@@ -9,6 +9,7 @@ export default function Menu(){
            <li><Link href="/sports" className="hover:scale-90 transition">Sports</Link></li>
            <li><Link href="/tech" className="hover:scale-90 transition">Tech</Link></li>
            <li><Link href="/food" className="hover:scale-90 transition">Food</Link></li>
+           <li><Link href="/world" className="hover:scale-90 transition">World</Link></li>
          </ul>
         </div>
     )
