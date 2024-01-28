@@ -5,6 +5,7 @@ import { ThemeProvider } from './components/theme-provider'
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Menu from './components/menu';
+import { ClerkProvider } from '@clerk/nextjs';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,6 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
       <ThemeProvider
@@ -36,5 +38,6 @@ export default function RootLayout({
           </ThemeProvider>
           </body>
     </html>
+    </ClerkProvider>
   )
 }

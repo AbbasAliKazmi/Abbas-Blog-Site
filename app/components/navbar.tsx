@@ -7,6 +7,7 @@ export default function Navbar() {
            <Link href="/" className="font-bold text-3xl">
                Mystic<span className="text-primary">Pakistan</span>
            </Link>
+           <Link href="/dashboard" className="">Dahboard</Link>
            
            <ModeToggle />
         </div>
